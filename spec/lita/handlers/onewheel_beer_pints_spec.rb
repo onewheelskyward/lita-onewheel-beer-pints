@@ -3,17 +3,10 @@ require 'spec_helper'
 describe Lita::Handlers::OnewheelBeerPints, lita_handler: true do
   it { is_expected.to route_command('taps') }
   it { is_expected.to route_command('taps 4') }
-  it { is_expected.to route_command('taps nitro') }
-  it { is_expected.to route_command('taps CASK') }
   it { is_expected.to route_command('taps <$4') }
-  it { is_expected.to route_command('taps < $4') }
   it { is_expected.to route_command('taps <=$4') }
-  it { is_expected.to route_command('taps <= $4') }
   it { is_expected.to route_command('taps >4%') }
-  it { is_expected.to route_command('taps > 4%') }
   it { is_expected.to route_command('taps >=4%') }
-  it { is_expected.to route_command('taps >= 4%') }
-  it { is_expected.to route_command('tapslow') }
   it { is_expected.to route_command('tapsabvhigh') }
   it { is_expected.to route_command('tapsabvlow') }
 
