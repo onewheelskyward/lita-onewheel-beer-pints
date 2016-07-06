@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe Lita::Handlers::OnewheelBeerPints, lita_handler: true do
-  it { is_expected.to route_command('taps') }
-  it { is_expected.to route_command('taps 4') }
-  it { is_expected.to route_command('taps <$4') }
-  it { is_expected.to route_command('taps <=$4') }
-  it { is_expected.to route_command('taps >4%') }
-  it { is_expected.to route_command('taps >=4%') }
-  it { is_expected.to route_command('tapsabvhigh') }
-  it { is_expected.to route_command('tapsabvlow') }
+  it { is_expected.to route_command('pints') }
+  it { is_expected.to route_command('pints 4') }
+  it { is_expected.to route_command('pints <$4') }
+  it { is_expected.to route_command('pints <=$4') }
+  it { is_expected.to route_command('pints >4%') }
+  it { is_expected.to route_command('pints >=4%') }
+  it { is_expected.to route_command('pintsabvhigh') }
+  it { is_expected.to route_command('pintsabvlow') }
 
   before do
     mock = File.open('spec/fixtures/pints.html').read
@@ -17,12 +17,12 @@ describe Lita::Handlers::OnewheelBeerPints, lita_handler: true do
 
   it 'shows the taps' do
     send_command 'pints'
-    expect(replies.last).to eq("Bailey's taps: 1) Cider Riot! Plastic Paddy  2) Fox Tail Rosenberry  3) (Cask) Machine House Crystal Maze  4) Wild Ride Solidarity  5) Mazama Gillian’s Red  6) (Nitro) Backwoods Winchester Brown  7) Fort George Vortex  8) Fat Head’s Zeus Juice  9) Hopworks Noggin’ Floggin’  10) Anderson Valley Briney Melon Gose  11) Lagunitas Copper Fusion Ale  12) Double Mountain Fast Lane  13) Burnside Couch Lager  14) Bell’s Oatmeal Stout  15) Baerlic Wildcat  16) New Belgium La Folie  17) Culmination Urizen  18) Knee Deep Hop Surplus  19) Cascade Lakes Ziggy Stardust  20) Knee Deep Dark Horse  21) Coronado Orange Avenue Wit  22) GoodLife 29er  23) Amnesia Slow Train Porter  24) Oakshire Perfect Storm  25) Green Flash Passion Fruit Kicker")
+    expect(replies.last).to eq("Pints taps: 1) Brick House Blonde 2) Seismic IPA 3) Rip Saw Red 4) Steel Bridge Stout 5) You’re A Peach, Hon’………5.9% ABV – 18 IBU 6) Belgian Breakfast Beer 7) Chocolate Blood Orange Candi Biere 8) Pints Single Hop Pale Series………5.4% ABV – 45 IBU 9) Konvention Kölsch………")
   end
 
   it 'displays details for tap 4' do
-    send_command 'pints 4'
-    expect(replies.last).to eq('Bailey\'s tap 4) Wild Ride Solidarity - Abbey Dubbel – Barrel Aged (Pinot Noir) 8.2%, 4oz - $4 | 12oz - $7, 26% remaining')
+    send_command 'pints brick'
+    expect(replies.last).to eq("Pints's tap 1) Brick House Blonde 5.0% ABV 18 IBU - She’s blonde and refreshing! She’s mighty mighty! Brewed with perfect proportions of Northwest hops and malts for a beer that makes an old man wish for younger days. This session ale lets it all hang out with easy drinkability and a light malt finish. …what a winning hand!, ")
   end
 
 end

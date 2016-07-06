@@ -1,9 +1,9 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-onewheel-beer-pints'
-  spec.version       = '3.8.5'
+  spec.version       = '0.0.0'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
-  spec.description   = %q{Lita interface to Bailey's Taproom listings.}
+  spec.description   = %q{Lita interface to Pints Taproom listings.}
   spec.summary       = %q{See above.}
   spec.homepage      = 'https://github.com/onewheelskyward/lita-onewheel-beer-pints'
   spec.license       = 'MIT'
@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'lita', '~> 4.7'
   spec.add_runtime_dependency 'rest-client', '~> 1.8'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6'
-  spec.add_runtime_dependency 'sanitize', '~> 4.0'
   spec.add_runtime_dependency 'lita-onewheel-beer-base', '~> 2'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
