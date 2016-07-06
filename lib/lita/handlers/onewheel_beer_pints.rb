@@ -60,7 +60,7 @@ module Lita
         reply += "#{datum[:name]} "
         reply += datum[:abv].to_s + '% ABV '
         reply += datum[:ibu].to_s + ' IBU '
-        reply += "- #{datum[:desc]}, "
+        reply += "- #{datum[:desc]}"
 
         Lita.logger.info "send_response: Replying with #{reply}"
 
@@ -93,6 +93,7 @@ module Lita
           # gimme_what_you_got
           if got_beer
             beer_desc = beer_node.children.to_s
+
             got_beer = false
             full_text_search = "#{beer_name} #{beer_desc.to_s.gsub /\d+\.*\d*%*/, ''}"
 
