@@ -46,7 +46,7 @@ module Lita
         beers.each do |tap, datum|
           reply += "#{tap}) "
           reply += datum[:name] + ' '
-          # reply += datum[:abv].to_s + '% ABV '
+          reply += datum[:abv].to_s + '% '
           # reply += datum[:ibu].to_s + ' IBU '
         end
         reply = reply.strip.sub /,\s*$/, ''
@@ -57,7 +57,7 @@ module Lita
 
       def send_response(tap, datum, response)
         reply = "Pints's tap #{tap}) "
-        reply += "#{datum[:name]} "
+        reply += "#{datum[:name]} - "
         reply += datum[:abv].to_s + '% ABV '
         reply += datum[:ibu].to_s + ' IBU '
         reply += "- #{datum[:desc]}"
