@@ -78,8 +78,6 @@ module Lita
       end
 
       # This is the worker bee- decoding the html into our "standard" document.
-      # Future implementations could simply override this implementation-specific
-      # code to help this grow more widely.
       def parse_response(response)
         Lita.logger.debug 'parse_response started.'
         gimme_what_you_got = {}
