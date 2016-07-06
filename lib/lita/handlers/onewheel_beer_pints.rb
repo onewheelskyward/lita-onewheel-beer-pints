@@ -47,6 +47,7 @@ module Lita
           reply += "#{tap}) "
           reply += datum[:name] + ' '
           reply += datum[:abv].to_s + '% '
+          reply += ' '
           # reply += datum[:ibu].to_s + ' IBU '
         end
         reply = reply.strip.sub /,\s*$/, ''

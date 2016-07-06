@@ -17,7 +17,7 @@ describe Lita::Handlers::OnewheelBeerPints, lita_handler: true do
 
   it 'shows the taps' do
     send_command 'pints'
-    expect(replies.last).to include("Pints taps: 1) Brick House Blonde 5.0% 2) Seismic IPA 6.2% 3) Rip Saw Red 6.5% 4) Steel Bridge Stout")
+    expect(replies.last).to include("Pints taps: 1) Brick House Blonde 5.0%  2) Seismic IPA 6.2%  3) Rip Saw Red 6.5%  4) Steel Bridge Stout")
   end
 
   it 'displays details for tap brick' do
