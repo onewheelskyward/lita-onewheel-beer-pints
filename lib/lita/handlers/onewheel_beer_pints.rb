@@ -46,7 +46,7 @@ module Lita
         beers.each do |tap, datum|
           reply += "#{tap}) "
           reply += datum[:name] + ' '
-          reply += datum[:abv].to_s + '% '
+          reply += '- ' + datum[:abv].to_s + '% '
           reply += ' '
           # reply += datum[:ibu].to_s + ' IBU '
         end
