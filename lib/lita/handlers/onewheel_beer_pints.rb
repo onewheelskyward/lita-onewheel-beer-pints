@@ -121,7 +121,8 @@ module Lita
             data = beer_node.css('strong')
             beer_name = data.children.first.to_s
             beer_name.strip!
-            beer_name.sub! /\s+…+.* ABV.*IBU/, ''
+            beer_name.sub! /\s*……….*ABV.*IBU/, ''
+            beer_name.sub! /………/, ''
             beer_abv = data.children.last.to_s[/\d+\.\d+% ABV/]
             beer_abv.sub! /% ABV/, ''
             beer_ibu = data.children.last.to_s[/\d+ IBU/]

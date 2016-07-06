@@ -27,7 +27,12 @@ describe Lita::Handlers::OnewheelBeerPints, lita_handler: true do
 
   it 'displays details for tap 7' do
     send_command 'pints 7'
-    puts replies.last
     expect(replies.last).to include("Pints's tap 7) Chocolate Blood Orange Candi Biere - 5.9% ABV 24 IBU - This brew is inspired by the")
+  end
+
+  it 'displays details for tap 5' do
+    send_command 'pints 5'
+    puts replies.last
+    expect(replies.last).to include("Pints's tap 5) You’re A Peach, Hon’ - 5.9% ABV 18 IBU - Matt, our human brewing machine, ")
   end
 end
